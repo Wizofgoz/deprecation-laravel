@@ -26,7 +26,7 @@ class DeprecationAwareMiddlewareTest extends TestCase
         $middleware = $this->createMiddleware();
 
         /** @var Response $response */
-        $response = $middleware->handle(new Request(), fn() => new Response());
+        $response = $middleware->handle(new Request(), fn () => new Response());
 
         $this->assertFalse($response->headers->has(Deprecated::HEADER));
         $this->assertFalse($response->headers->has(Link::HEADER));
@@ -40,7 +40,7 @@ class DeprecationAwareMiddlewareTest extends TestCase
         $this->getService()->deprecate(Deprecated::new());
 
         /** @var Response $response */
-        $response = $middleware->handle(new Request(), fn() => new Response());
+        $response = $middleware->handle(new Request(), fn () => new Response());
 
         $this->assertTrue($response->headers->has(Deprecated::HEADER));
         $this->assertFalse($response->headers->has(Link::HEADER));
@@ -54,7 +54,7 @@ class DeprecationAwareMiddlewareTest extends TestCase
         $this->getService()->deprecate(Deprecated::new()->addLink(new AlternateLink('https://example.com/test')));
 
         /** @var Response $response */
-        $response = $middleware->handle(new Request(), fn() => new Response());
+        $response = $middleware->handle(new Request(), fn () => new Response());
 
         $this->assertTrue($response->headers->has(Deprecated::HEADER));
         $this->assertTrue($response->headers->has(Link::HEADER));
@@ -68,7 +68,7 @@ class DeprecationAwareMiddlewareTest extends TestCase
         $this->getService()->sunset(Sunsetted::new(Carbon::now()));
 
         /** @var Response $response */
-        $response = $middleware->handle(new Request(), fn() => new Response());
+        $response = $middleware->handle(new Request(), fn () => new Response());
 
         $this->assertFalse($response->headers->has(Deprecated::HEADER));
         $this->assertFalse($response->headers->has(Link::HEADER));
@@ -85,7 +85,7 @@ class DeprecationAwareMiddlewareTest extends TestCase
         $this->getService()->sunset(null);
 
         /** @var Response $response */
-        $response = $middleware->handle(new Request(), fn() => new Response());
+        $response = $middleware->handle(new Request(), fn () => new Response());
 
         $this->assertFalse($response->headers->has(Deprecated::HEADER));
         $this->assertFalse($response->headers->has(Link::HEADER));

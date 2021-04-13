@@ -16,7 +16,7 @@ class DeprecationService
      */
     public function deprecate(?Deprecated $deprecated): void
     {
-        $this->app->singleton(Deprecated::class, fn() => $deprecated);
+        $this->app->singleton(Deprecated::class, fn () => $deprecated);
     }
 
     /**
@@ -60,7 +60,7 @@ class DeprecationService
      */
     public function sunset(?Sunsetted $sunset): void
     {
-        $this->app->singleton(Sunsetted::class, fn() => $sunset);
+        $this->app->singleton(Sunsetted::class, fn () => $sunset);
     }
 
     /**

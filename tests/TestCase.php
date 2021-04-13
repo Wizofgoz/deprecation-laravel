@@ -2,10 +2,9 @@
 
 namespace Wizofgoz\DeprecationLaravel\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Wizofgoz\DeprecationLaravel\ServiceProvider;
 use Wizofgoz\DeprecationLaravel\DeprecationService;
+use Wizofgoz\DeprecationLaravel\ServiceProvider;
 
 class TestCase extends Orchestra
 {

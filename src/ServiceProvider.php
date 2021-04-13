@@ -15,6 +15,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
     public function registerBindings(): void
     {
-        $this->app->singleton(DeprecationService::class, fn(Application $app) => new DeprecationService($app));
+        $this->app->singleton(DeprecationService::class, fn (Application $app) => new DeprecationService($app));
     }
 }
