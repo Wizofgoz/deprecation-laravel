@@ -1,26 +1,28 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Wizofgoz\DeprecationLaravel\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
+use Wizofgoz\DeprecationLaravel\ServiceProvider;
+use Wizofgoz\DeprecationLaravel\DeprecationService;
 
 class TestCase extends Orchestra
 {
     public function setUp(): void
     {
         parent::setUp();
+    }
 
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Spatie\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
+    public function getService(): DeprecationService
+    {
+        return $this->app[DeprecationService::class];
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            ServiceProvider::class,
         ];
     }
 
@@ -32,10 +34,5 @@ class TestCase extends Orchestra
             'database' => ':memory:',
             'prefix' => '',
         ]);
-
-        /*
-        include_once __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
-        (new \CreatePackageTable())->up();
-        */
     }
 }

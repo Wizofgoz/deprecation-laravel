@@ -1,17 +1,17 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "wizofgoz/deprecation-laravel",
+    "description": "Allows for marking URLs as deprecated via HTTP response headers",
     "keywords": [
-        ":vendor_name",
+        "Wizofgoz",
         "laravel",
-        "package_slug"
+        "deprecation-laravel"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/wizofgoz/deprecation-laravel",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Wizofgoz",
+            "email": "wizofgoz2@gmail.com",
             "role": "Developer"
         }
     ],
@@ -30,13 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Wizofgoz\\DeprecationLaravel\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Wizofgoz\\DeprecationLaravel\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,10 +49,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Wizofgoz\\DeprecationLaravel\\ServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "Deprecation": "Wizofgoz\\DeprecationLaravel\\Facades\\Deprecation"
             }
         }
     },
