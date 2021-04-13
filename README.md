@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/wizofgoz/deprecation-laravel.svg?style=flat-square)](https://packagist.org/packages/wizofgoz/deprecation-laravel)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/wizofgoz/deprecation-laravel/run-tests?label=tests)](https://github.com/wizofgoz/deprecation-laravel/actions?query=workflow%3Arun-tests+branch%3Amaster)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/wizofgoz/deprecation-laravel/Check%20&%20fix%20styling?label=code%20style)](https://github.com/wizofgoz/deprecation-laravel/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/wizofgoz/deprecation_laravel.svg?style=flat-square)](https://packagist.org/packages/wizofgoz/deprecation-laravel)
+[![Total Downloads](https://img.shields.io/packagist/dt/wizofgoz/deprecation-laravel.svg?style=flat-square)](https://packagist.org/packages/wizofgoz/deprecation-laravel)
 
 This package can be installed in a Laravel application to mark API endpoints as deprecated according to the [Deprecation HTTP Header Field](https://tools.ietf.org/id/draft-dalal-deprecation-header-01.html) draft.
 
