@@ -66,6 +66,14 @@ Deprecation::sunset($sunset);
 Deprecation::sunset(null);
 ```
 
+### Events
+Events are emitted when the middleware applies the `Deprecation` and `Sunset` headers. Simply, register listeners for either the `DeprecatedResourceCalled` or `SunsettedResourceCalled` events.
+```php
+Event::listen(function (DeprecatedResourceCalled $event) {
+    Log::warning('Call to deprecated resource: ' . $event->request->getUri());
+});
+```
+
 ## Testing
 
 ```bash
