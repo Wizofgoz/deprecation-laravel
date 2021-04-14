@@ -11,7 +11,7 @@ use Wizofgoz\DeprecationLaravel\Links\LinkCollection;
 
 final class Deprecated implements AppliesToResponse
 {
-    public const HEADER = 'Deprecated';
+    public const HEADER = 'Deprecation';
 
     protected function __construct(private LinkCollection $links, private ?Carbon $date)
     {
