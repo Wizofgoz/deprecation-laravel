@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/wizofgoz/deprecation-laravel.svg?style=flat-square)](https://packagist.org/packages/wizofgoz/deprecation-laravel)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/wizofgoz/deprecation-laravel/run-tests?label=tests)](https://github.com/wizofgoz/deprecation-laravel/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![codecov](https://codecov.io/gh/Wizofgoz/deprecation-laravel/branch/master/graph/badge.svg?token=DRDG110UYI)](https://codecov.io/gh/Wizofgoz/deprecation-laravel)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/wizofgoz/deprecation-laravel/Check%20&%20fix%20styling?label=code%20style)](https://github.com/wizofgoz/deprecation-laravel/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/wizofgoz/deprecation-laravel.svg?style=flat-square)](https://packagist.org/packages/wizofgoz/deprecation-laravel)
 
@@ -64,6 +65,14 @@ Deprecation::sunset($sunset);
 
 // Unset a sunset that has been set already
 Deprecation::sunset(null);
+```
+
+### Events
+Events are emitted when the middleware applies the `Deprecation` and `Sunset` headers. Simply, register listeners for either the `DeprecatedResourceCalled` or `SunsettedResourceCalled` events.
+```php
+Event::listen(function (DeprecatedResourceCalled $event) {
+    Log::warning('Call to deprecated resource: ' . $event->request->getUri());
+});
 ```
 
 ## Testing
